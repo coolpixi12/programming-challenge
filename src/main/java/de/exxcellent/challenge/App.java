@@ -17,10 +17,9 @@ public final class App {
      */
     public static void main(String... args) throws IOException {
         String filePath = "./src/main/resources/de/exxcellent/challenge/weather.csv";
-        workWithCSV workWithCSV = new workWithCSV();
-        List<String[]> cSVValues = workWithCSV.read(filePath);
-        workWithCSV.printCSV(cSVValues);
-
+        ReaderForCSV readerForCSV = new ReaderForCSV();
+        List<String[]> csvValues = readerForCSV.read(filePath);
+        //readerForCSV.printCSV(cSVValues);
 
         String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);

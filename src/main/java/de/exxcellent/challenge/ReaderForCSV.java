@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class workWithCSV implements Reader {
+public class ReaderForCSV implements Reader {
     public List<String[]> read(String filePath) throws IOException {
         FileReader fileReader = new FileReader(filePath);
         List<String[]> allLines = new ArrayList<>();
@@ -25,8 +25,8 @@ public class workWithCSV implements Reader {
         return allLines;
     }
 
-    public void printCSV(List<String[]> cSVValues) {
-        for (String[] line : cSVValues) {
+    public void printCSV(List<String[]> csvValues) {
+        for (String[] line : csvValues) {
             for (String token : line) {
                 System.out.println(token);
             }

@@ -1,5 +1,7 @@
 package de.exxcellent.challenge;
 
+import java.util.List;
+
 public interface Calculations {
-    int calculateMinToMax(int min, int max);
+    int calculateDayOfSmallestTemperatureSpread(List<String[]> csvValues);
 }
