@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class workWithCSV {
-    public List<String[]> readCSV(String filePath) throws IOException {
+public class workWithCSV implements Reader {
+    public List<String[]> read(String filePath) throws IOException {
         FileReader fileReader = new FileReader(filePath);
         List<String[]> allLines = new ArrayList<>();
         CSVReader openCSVReader = new CSVReader(fileReader);
@@ -32,4 +32,5 @@ public class workWithCSV {
             }
         }
     }
+
 }

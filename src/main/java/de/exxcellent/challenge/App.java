@@ -18,7 +18,7 @@ public final class App {
     public static void main(String... args) throws IOException {
         String filePath = "./src/main/resources/de/exxcellent/challenge/weather.csv";
         workWithCSV workWithCSV = new workWithCSV();
-        List<String[]> cSVValues = workWithCSV.readCSV(filePath);
+        List<String[]> cSVValues = workWithCSV.read(filePath);
         workWithCSV.printCSV(cSVValues);
 
 
