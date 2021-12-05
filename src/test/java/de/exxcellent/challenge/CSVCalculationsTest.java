@@ -20,6 +20,6 @@ class CSVCalculationsTest {
         testList.add(testLine1);
         testList.add(testLine2);
         testList.add(testLine3);
-        assertEquals(1, calculations.calculateDayOfSmallestTemperatureSpread(testList));
+        assertEquals("2", calculations.calculateDayOfSmallestTemperatureSpread(testList));
     }
 }

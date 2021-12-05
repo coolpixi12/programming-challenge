@@ -8,18 +8,16 @@ public class CSVCalculations implements Calculations{
         return max-min;
     }
 
-    public int calculateDayOfSmallestTemperatureSpread(List<String[]> csvValues){
+    public String calculateDayOfSmallestTemperatureSpread(List<String[]> csvValues){
         int min  = Integer.MAX_VALUE;
-        int day = 0;
-        int smallestTemperatureSpreadDay = 0;
+        String smallestTemperatureSpreadDay = "";
         for (String[] dayValues : csvValues.subList(1, csvValues.size())) {
-            day ++;
             int maxDayTemperature = Integer.parseInt(dayValues[1]);
             int minDayTemperature = Integer.parseInt(dayValues[2]);
-            int temperatureSpread = calculateSmallestTemperatureSpread(maxDayTemperature, minDayTemperature);
+            int temperatureSpread = calculateSmallestTemperatureSpread(minDayTemperature, maxDayTemperature);
             if(temperatureSpread < min){
                 min = temperatureSpread;
-                smallestTemperatureSpreadDay = day;
+                smallestTemperatureSpreadDay = dayValues[0];
             }
         }
         return smallestTemperatureSpreadDay;
