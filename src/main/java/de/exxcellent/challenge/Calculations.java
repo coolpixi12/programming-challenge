@@ -3,5 +3,5 @@ package de.exxcellent.challenge;
 import java.util.List;
 
 public interface Calculations {
-    String calculateDayOfSmallestTemperatureSpread(List<String[]> csvValues);
+    String calculateLineOfSmallestColumnDifference(List<String[]> csvValues, int columnMax, int columnMin);
 }

@@ -13,15 +13,16 @@ public final class App {
 
     /**
      * This is the main entry method of your program.
+     *
      * @param args The CLI arguments passed
      */
     public static void main(String... args) throws IOException {
         String filePath = "./src/main/resources/de/exxcellent/challenge/weather.csv";
         ReaderForCSV readerForCSV = new ReaderForCSV();
         List<String[]> csvValues = readerForCSV.read(filePath);
-        //readerForCSV.printCSV(cSVValues);
+
         Calculations calculate = new CSVCalculations();
-        String dayWithSmallestTempSpread = calculate.calculateDayOfSmallestTemperatureSpread(csvValues);
+        String dayWithSmallestTempSpread = calculate.calculateLineOfSmallestColumnDifference(csvValues, 1, 2);
 
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 

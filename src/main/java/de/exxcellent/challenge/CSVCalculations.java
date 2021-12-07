@@ -2,25 +2,25 @@ package de.exxcellent.challenge;
 
 import java.util.List;
 
-public class CSVCalculations implements Calculations{
+public class CSVCalculations implements Calculations {
 
-    private int calculateSmallestTemperatureSpread(int min, int max) {
-        return max-min;
-    }
-
-    public String calculateDayOfSmallestTemperatureSpread(List<String[]> csvValues){
-        int min  = Integer.MAX_VALUE;
-        String smallestTemperatureSpreadDay = "";
-        for (String[] dayValues : csvValues.subList(1, csvValues.size())) {
-            int maxDayTemperature = Integer.parseInt(dayValues[1]);
-            int minDayTemperature = Integer.parseInt(dayValues[2]);
-            int temperatureSpread = calculateSmallestTemperatureSpread(minDayTemperature, maxDayTemperature);
-            if(temperatureSpread < min){
-                min = temperatureSpread;
-                smallestTemperatureSpreadDay = dayValues[0];
+    public String calculateLineOfSmallestColumnDifference(List<String[]> csvValues, int columnMax, int columnMin) {
+        int min = Integer.MAX_VALUE;
+        String lineOfSmallestDifference = "";
+        for (String[] line : csvValues.subList(1, csvValues.size())) {
+            int maxValueColumn = Integer.parseInt(line[columnMax]);
+            int minValueColumn = Integer.parseInt(line[columnMin]);
+            int differenceOfMaxAndMin = calculateDifference(minValueColumn, maxValueColumn);
+            if (differenceOfMaxAndMin < min) {
+                min = differenceOfMaxAndMin;
+                lineOfSmallestDifference = line[0];
             }
         }
-        return smallestTemperatureSpreadDay;
+        return lineOfSmallestDifference;
+    }
+
+    private int calculateDifference(int min, int max) {
+        return max - min;
     }
 
 }
