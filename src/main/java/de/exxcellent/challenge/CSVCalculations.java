@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CSVCalculations implements Calculations {
 
-    public String calculateLineOfSmallestColumnDifference(List<String[]> csvValues, int columnMax, int columnMin) {
+    public String calculateLineOfSmallestDifference(List<String[]> csvValues, int columnMax, int columnMin) {
         int min = Integer.MAX_VALUE;
         String lineOfSmallestDifference = "";
         for (String[] line : csvValues.subList(1, csvValues.size())) {
@@ -20,7 +20,7 @@ public class CSVCalculations implements Calculations {
     }
 
     private int calculateDifference(int min, int max) {
-        return max - min;
+        return Math.abs(max - min);
     }
 
 }

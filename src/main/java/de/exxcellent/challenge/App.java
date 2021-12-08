@@ -17,16 +17,19 @@ public final class App {
      * @param args The CLI arguments passed
      */
     public static void main(String... args) throws IOException {
-        String filePath = "./src/main/resources/de/exxcellent/challenge/weather.csv";
+        String filePathWeather = "./src/main/resources/de/exxcellent/challenge/weather.csv";
+        String filePathFootball = "./src/main/resources/de/exxcellent/challenge/football.csv";
+
         ReaderForCSV readerForCSV = new ReaderForCSV();
-        List<String[]> csvValues = readerForCSV.read(filePath);
+        List<String[]> csvValuesWeather = readerForCSV.read(filePathWeather);
+        List<String[]> csvValuesFootball = readerForCSV.read(filePathFootball);
 
         Calculations calculate = new CSVCalculations();
-        String dayWithSmallestTempSpread = calculate.calculateLineOfSmallestColumnDifference(csvValues, 1, 2);
+        String dayWithSmallestTempSpread = calculate.calculateLineOfSmallestDifference(csvValuesWeather, 1, 2);
 
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
+        String teamWithSmallestGoalSpread = calculate.calculateLineOfSmallestDifference(csvValuesFootball, 5, 6);
         System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
     }
 }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class CSVCalculationsTest {
     CSVCalculations calculations = new CSVCalculations();
@@ -16,10 +17,22 @@ class CSVCalculationsTest {
 
 
     @Test
-    void calculateDayOfSmallestTemperatureSpread() {
+    void calculateLineOfSmallestDifferenceTestChoose2() {
         testList.add(testLine1);
         testList.add(testLine2);
         testList.add(testLine3);
-        assertEquals("2", calculations.calculateLineOfSmallestColumnDifference(testList, 1, 2));
+        assertEquals("2", calculations.calculateLineOfSmallestDifference(testList, 1, 2));
+    }
+    @Test
+    void calculateLineOfSmallestDifferenceTestChoose1() {
+        testList.add(testLine1);
+        testList.add(testLine2);
+        assertEquals("1", calculations.calculateLineOfSmallestDifference(testList, 1, 2));
+    }
+
+    @Test
+    void calculateLineOfSmallestDifferenceTestNoCalculationLines() {
+        testList.add(testLine1);
+        assertEquals("", calculations.calculateLineOfSmallestDifference(testList, 1, 2));
     }
 }
