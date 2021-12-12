@@ -8,6 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReaderForCSV implements Reader {
+    /**
+     * read csv file
+     *
+     * @param filePath where the file is located
+     * @return the csv file
+     * @throws IOException if the file not exists
+     */
     public List<String[]> read(String filePath) throws IOException {
         FileReader fileReader = new FileReader(filePath);
         List<String[]> allLines = new ArrayList<>();

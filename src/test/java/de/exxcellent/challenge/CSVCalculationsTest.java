@@ -22,6 +22,7 @@ class CSVCalculationsTest {
         testList.add(testLine3);
         assertEquals("2", calculations.calculateLineOfSmallestDifference(testList, 1, 2));
     }
+
     @Test
     void calculateLineOfSmallestDifferenceTestChoose1() {
         testList.add(testLine1);

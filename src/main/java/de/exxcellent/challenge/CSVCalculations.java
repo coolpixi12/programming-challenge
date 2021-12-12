@@ -3,7 +3,14 @@ package de.exxcellent.challenge;
 import java.util.List;
 
 public class CSVCalculations implements Calculations {
-
+    /**
+     * calculate in List line of the smallest difference
+     *
+     * @param csvValues input values of the calculation
+     * @param columnMax column of maximum values
+     * @param columnMin column of minimum values
+     * @return the line name
+     */
     public String calculateLineOfSmallestDifference(List<String[]> csvValues, int columnMax, int columnMin) {
         int min = Integer.MAX_VALUE;
         String lineOfSmallestDifference = "";

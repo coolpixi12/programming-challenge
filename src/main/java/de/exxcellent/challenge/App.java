@@ -17,8 +17,8 @@ public final class App {
      * @param args The CLI arguments passed
      */
     public static void main(String... args) throws IOException {
-        String filePathWeather = "./src/main/resources/de/exxcellent/challenge/weather.csv";
-        String filePathFootball = "./src/main/resources/de/exxcellent/challenge/football.csv";
+        final String filePathWeather = "./src/main/resources/de/exxcellent/challenge/weather.csv";
+        final String filePathFootball = "./src/main/resources/de/exxcellent/challenge/football.csv";
 
         ReaderForCSV readerForCSV = new ReaderForCSV();
         List<String[]> csvValuesWeather = readerForCSV.read(filePathWeather);
