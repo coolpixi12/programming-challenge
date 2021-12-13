@@ -31,13 +31,4 @@ public class ReaderForCSV implements Reader {
         }
         return allLines;
     }
-
-    public void printCSV(List<String[]> csvValues) {
-        for (String[] line : csvValues) {
-            for (String token : line) {
-                System.out.println(token);
-            }
-        }
-    }
-
 }
